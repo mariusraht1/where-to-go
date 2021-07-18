@@ -1,1 +1,34 @@
-<p>timetable works!</p>
+<div style="margin-top: 15px"></div>
+<h2 class="ui header">Timetable:</h2>
+<div style="padding: 15px">
+  <div class="ui middle aligned divided list">
+    <div *ngFor="let l of lectures" class="item">
+      <a
+        class="app-lecture-item item"
+        [lecture]="l"
+        (click)="onSelect(l)"
+        style="margin: 10px; padding: 10px"
+      ></a>
+    </div>
+  </div>
+</div>
+<div style="padding: 15px">
+  <div class="ui middle aligned divided list">
+    <div *ngIf="selectedLecture" style="padding: 50px">
+      <h4>{{ selectedLecture.name }} Details</h4>
+      <div class="description">
+        Where? {{ selectedLecture.building }}/{{ selectedLecture.floor }}.{{
+          selectedLecture.room
+        }}
+      </div>
+      <div class="description">
+        When? {{ selectedLecture.day }},{{ selectedLecture.time.hours }}:{{
+          selectedLecture.time.minutes
+        }}
+      </div>
+      <div *ngIf="selectedLecture.department" class="description">
+        Department: {{ selectedLecture.department }}
+      </div>
+    </div>
+  </div>
+</div>

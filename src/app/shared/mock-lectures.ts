@@ -1,2 +1,53 @@
-export class MockLectures {
-}
+import { Lecture } from './lecture';
+export const LECTURES: Lecture[] = [
+  {
+    id: 1,
+    name: 'Webtechnologien',
+    room: '075',
+    day: 'Monday',
+    time: { hours: 10, minutes: 0 },
+    building: 'KR1',
+    floor: '02',
+    department: 'Lehrstuhl für Medieninformatik',
+  },
+  {
+    id: 2,
+    name: 'Webtechnologien',
+    room: '075',
+    day: 'Tuesday',
+    time: { hours: 12, minutes: 30 },
+    building: 'WE5',
+    floor: '02',
+    department: 'Lehrstuhl für Medieninformatik',
+  },
+  {
+    id: 3,
+    name: 'Webtechnologien',
+    room: '075',
+    day: 'Wednesday',
+    time: { hours: 10, minutes: 30 },
+    building: 'WE5',
+    floor: '02',
+    department: 'Lehrstuhl für Medieninformatik',
+  },
+  {
+    id: 4,
+    name: 'Webtechnologien',
+    room: '075',
+    day: 'Thursday',
+    time: { hours: 8, minutes: 45 },
+    building: 'F21',
+    floor: '02',
+    department: 'Lehrstuhl für Medieninformatik',
+  },
+  {
+    id: 5,
+    name: 'Webtechnologien',
+    room: '075',
+    day: 'Friday',
+    time: { hours: 10, minutes: 0 },
+    building: 'M3',
+    floor: '02',
+    department: 'Lehrstuhl für Medieninformatik',
+  },
+];

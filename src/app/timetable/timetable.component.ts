@@ -1,16 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { Lecture } from '../shared/lecture';
+import { LECTURES } from '../shared/mock-lectures';
 
 @Component({
   selector: 'app-timetable',
   templateUrl: './timetable.component.html',
-  styles: [
-  ]
+  styles: [],
 })
 export class TimetableComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  lectures = LECTURES;
+  selectedLecture: Lecture | undefined;
 
-  ngOnInit(): void {
+  onSelect(lecture: Lecture): void {
+    this.selectedLecture = lecture;
   }
 
+  ngOnInit(): void {}
 }
