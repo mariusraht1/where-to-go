@@ -8,10 +8,10 @@ import { LECTURES } from '../shared/mock-lectures';
   styles: [],
 })
 export class TimetableComponent implements OnInit {
-  constructor() {}
-
   lectures = LECTURES;
   selectedLecture: Lecture | undefined;
+
+  constructor() {}
 
   onSelect(lecture: Lecture): void {
     this.selectedLecture = lecture;
