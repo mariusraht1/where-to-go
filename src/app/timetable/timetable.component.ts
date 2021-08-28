@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Lecture } from '../shared/lecture';
+import { LectureService } from '../shared/lecture.service';
 import { LECTURES } from '../shared/mock-lectures';
 
 @Component({
@@ -8,14 +9,22 @@ import { LECTURES } from '../shared/mock-lectures';
   styles: [],
 })
 export class TimetableComponent implements OnInit {
-  lectures = LECTURES;
+  lectures: Lecture[] = [];
   selectedLecture: Lecture | undefined;
 
-  constructor() {}
+  constructor(private lectureService: LectureService) {}
+
+  getLectures(): void {
+    this.lectureService
+      .getLectures()
+      .subscribe((lectures) => (this.lectures = lectures));
+  }
 
   onSelect(lecture: Lecture): void {
     this.selectedLecture = lecture;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getLectures();
+  }
 }
