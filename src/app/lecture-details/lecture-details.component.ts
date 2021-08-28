@@ -33,4 +33,12 @@ export class LectureDetailsComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+
+  save(): void {
+    if (this.lecture) {
+      this.lectureService
+        .updateLecture(this.lecture)
+        .subscribe(() => this.goBack());
+    }
+  }
 }

@@ -82,6 +82,21 @@
       </div>
     </div>
     <p>* Please fill these input fields out!</p>
+    <button class="ui primary button" (click)="save()">Save</button>
+    <p
+      style="color: red"
+      *ngIf="
+        !lecture.name ||
+        !lecture.room ||
+        !lecture.day ||
+        !lecture.time.hours ||
+        !lecture.time.minutes ||
+        !lecture.building ||
+        !lecture.floor
+      "
+    >
+      Please check again, if you filled all input fields correctly!
+    </p>
     <button class="ui button" (click)="goBack()">Go Back</button>
   </div>
 </div>
