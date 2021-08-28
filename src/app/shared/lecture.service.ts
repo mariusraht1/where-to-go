@@ -9,6 +9,10 @@ import { LECTURES } from './mock-lectures';
 export class LectureService {
   constructor() {}
 
+  getLecture(id: number): Observable<Lecture | undefined> {
+    return of(LECTURES.find((lecture) => lecture.id === id));
+  }
+
   getLectures(): Observable<Lecture[]> {
     return of(LECTURES);
   }

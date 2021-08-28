@@ -12,10 +12,7 @@
         <label>Location of the Lecture*:</label>
         <div class="three fields">
           <div class="field">
-            <select
-              [(ngModel)]="lecture.building"
-              class="ui fluid dropdown"
-            >
+            <select [(ngModel)]="lecture.building" class="ui fluid dropdown">
               <option value="">Building</option>
               <option value="KR1">Am Kranen 1</option>
               <option value="WE5">An der Weberei 5</option>
@@ -24,16 +21,10 @@
             </select>
           </div>
           <div class="field">
-            <input
-              [(ngModel)]="lecture.floor"
-              placeholder="Floor eg. 01"
-            />
+            <input [(ngModel)]="lecture.floor" placeholder="Floor eg. 01" />
           </div>
           <div class="field">
-            <input
-              [(ngModel)]="lecture.room"
-              placeholder="Room eg. 005"
-            />
+            <input [(ngModel)]="lecture.room" placeholder="Room eg. 005" />
           </div>
         </div>
       </div>
@@ -52,10 +43,7 @@
             </select>
           </div>
           <div class="field">
-            <select
-              [(ngModel)]="lecture.time.hours"
-              class="ui fluid dropdown"
-            >
+            <select [(ngModel)]="lecture.time.hours" class="ui fluid dropdown">
               <option value="">Hour</option>
               <option value="8">8</option>
               <option value="9">9</option>
@@ -89,13 +77,11 @@
       <div class="field">
         <label>Department of the Lecture:</label>
         <div class="field">
-          <input
-            [(ngModel)]="lecture.department"
-            placeholder="Department"
-          />
+          <input [(ngModel)]="lecture.department" placeholder="Department" />
         </div>
       </div>
     </div>
     <p>* Please fill these input fields out!</p>
+    <button class="ui button" (click)="goBack()">Go Back</button>
   </div>
 </div>

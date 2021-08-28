@@ -7,10 +7,9 @@
       <a
         class="app-lecture-item item"
         [lecture]="l"
-        (click)="onSelect(l)"
+        routerLink="/lecture-details/{{ l.id }}"
         style="margin: 10px; padding: 10px"
       ></a>
     </div>
   </div>
 </div>
-<app-lecture-details [lecture]="selectedLecture"></app-lecture-details>
