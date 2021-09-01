@@ -47,13 +47,6 @@ export class LectureService {
     );
   }
 
-  private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-      console.log(operation + ' failed: ' + error);
-      return of(result as T);
-    }
-  }
-
   deleteLecture(lecture: Lecture | number): Observable<Lecture> {
     const id = typeof lecture === 'number' ? lecture : lecture.id;
     const url = `${this.lectureUrl}/${id}`;
@@ -61,5 +54,12 @@ export class LectureService {
     .pipe(
       catchError(this.handleError<Lecture>('deleteLecture'))
     );
+  }
+
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.log(operation + ' failed: ' + error);
+      return of(result as T);
+    }
   }
 }

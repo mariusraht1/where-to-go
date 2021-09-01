@@ -21,4 +21,15 @@ export class TimetableComponent implements OnInit {
       .getLectures()
       .subscribe((lectures) => (this.lectures = lectures));
   }
+
+  delete(lecture: Lecture): void {
+    this.lectures = this.lectures.filter((l) => l !== lecture);
+    this.lectureService.deleteLecture(lecture).subscribe();
+  }
+
+  deleteAll(): void {
+    for (let lecture of this.lectures) {
+      this.delete(lecture);
+    }
+  }
 }
